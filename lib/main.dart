@@ -17,21 +17,9 @@ class MyApp extends StatelessWidget {
               color: Colors.black,
               child: Column(
                 children: [
-                  Container(
-                    color: Colors.white,
-                    height: 120,
-                    margin: EdgeInsets.only(bottom: 40),
-                  ),
-                  Container(
-                    color: Colors.white,
-                    height: 120,
-                    margin: EdgeInsets.only(bottom: 40),
-                  ),
-                  Container(
-                    color: Colors.white,
-                    height: 120,
-                    margin: EdgeInsets.only(bottom: 40),
-                  ),
+                  WhiteContainer(),
+                  WhiteContainer(),
+                  WhiteContainer(),
                 ],
               ),
             ),
@@ -42,26 +30,45 @@ class MyApp extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Container(
-                  color: Colors.green,
-                  height: 50,
-                  width: 50,
+                RowContainer(
+                  cor: Colors.green,
                 ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  color: Colors.yellow,
+                RowContainer(
+                  cor: Colors.yellow,
                 ),
-                Container(
-                  height: 50,
-                  width: 50,
-                  color: Colors.red,
+                RowContainer(
+                  cor: Colors.red,
                 ),
               ],
             ),
           ),
         ],
       ),
+    );
+  }
+}
+
+class WhiteContainer extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      height: 120,
+      margin: EdgeInsets.only(bottom: 40),
+    );
+  }
+}
+
+class RowContainer extends StatelessWidget {
+  RowContainer({this.cor});
+  final Color cor;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 50,
+      width: 50,
+      color: cor,
     );
   }
 }
